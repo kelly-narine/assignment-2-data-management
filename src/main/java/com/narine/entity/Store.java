@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
-@Data //lombok annotation. generates accessors and mutators along with the toString method
+@Data //lombok annotation. creates accessors and mutators along with the toString method
 @AllArgsConstructor //lombok annotation. create constructor using all fields
 @NoArgsConstructor //lombok annotation. create empty constructor
 @Entity // denotes that this class is a table (like a table in SQL)
@@ -22,6 +22,6 @@ public class Store implements Serializable {
 
 //    @OneToMany(mappedBy = "store", fetch = FetchType.EAGER)
     @OneToMany
-    @JoinColumn//(name = "id_inventory") //foreign key
+//    @JoinColumn//(name = "id_inventory") //foreign key
     private List<Inventory> inventoryItems;
 }
