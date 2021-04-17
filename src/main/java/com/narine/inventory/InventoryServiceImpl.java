@@ -43,9 +43,9 @@ public class InventoryServiceImpl implements InventoryService {
 
     @Override
     public void removeFromList(Inventory inventory) {
-        Inventory correspondingPlayer = em.createNamedQuery("Inventory.getByName", Inventory.class)
+        Inventory correspondingItem = em.createNamedQuery("Inventory.getByName", Inventory.class)
                 .setParameter("name", inventory.getName())
                 .getSingleResult();
-        em.remove(correspondingPlayer);
+        em.remove(correspondingItem);
     }
 }
